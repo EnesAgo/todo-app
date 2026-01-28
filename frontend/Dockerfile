@@ -22,6 +22,8 @@ FROM caddy:2-alpine
 COPY --from=build /app/build /usr/share/caddy
 
 # Create a simple Caddyfile for SPA routing
-RUN echo ':80 {\n\troot * /usr/share/caddy\n\tfile_server\n\ttry_files {path} /index.html\n\tencode gzip\n}' > /etc/caddy/Caddyfile
+RUN printf ':80 {\n\troot * /usr/share/caddy\n\tfile_server\n\ttry_files {path} /index.html\n\tencode gzip\n}\n' > /etc/caddy/Caddyfile
 
 EXPOSE 80
+
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile"]
