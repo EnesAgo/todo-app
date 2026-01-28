@@ -19,7 +19,9 @@ jobs:
           script: |
             cd ~/todo-app
             git pull origin main
-            sudo docker-compose -f docker-compose.prod.yml up -d --build
+            sudo docker-compose -f docker-compose.prod.yml down --remove-orphans
+            sudo docker-compose -f docker-compose.prod.yml build --no-cache frontend
+            sudo docker-compose -f docker-compose.prod.yml up -d --force-recreate
             sleep 10
             sudo docker-compose -f docker-compose.prod.yml restart backend
             sudo docker image prune -f
