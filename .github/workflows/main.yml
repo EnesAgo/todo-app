@@ -20,4 +20,7 @@ jobs:
             cd ~/todo-app
             git pull origin main
             sudo docker-compose -f docker-compose.prod.yml up -d --build
+            sleep 10
+            sudo docker-compose -f docker-compose.prod.yml restart backend
             sudo docker image prune -f
+            sudo docker-compose -f docker-compose.prod.yml ps
