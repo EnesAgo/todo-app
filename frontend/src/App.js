@@ -6,7 +6,7 @@ function App() {
   const [newTodo, setNewTodo] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const backendUri = process.env.REACT_APP_BACKEND_URI || "http://localhost:3001";
+  const backendUri = process.env.REACT_APP_BACKEND_URI || "";
 
   const fetchTodos = async () => {
     try {
