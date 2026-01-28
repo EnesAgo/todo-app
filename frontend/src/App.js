@@ -49,7 +49,7 @@ function App() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8 p-6 bg-white border border-gray-300 rounded-lg shadow-sm">
+    <div className="max-w-md mx-auto mt-8 p-6 bg-[e0e0e0] border border-gray-300 rounded-lg shadow-sm">
       <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Todo List</h1>
       
       <form onSubmit={handleSubmit} className="mb-6">
